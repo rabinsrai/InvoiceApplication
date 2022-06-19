@@ -10,10 +10,16 @@ namespace InvoiceChildParent.InvoicingDataLayer
 {
     public class clsInvoiceDB
     {
-        
-       // private Database objDatabase = DatabaseFactory.CreateDatabase("ConnectionString");
-        DatabaseProviderFactory factory = new DatabaseProviderFactory();
-        Database objDatabase = factory.Create("ConnectionString");
+        DatabaseProviderFactory factory;
+        Database objDatabase;
+        public clsInvoiceDB()
+        {
+            factory = new DatabaseProviderFactory();
+            objDatabase = factory.Create("ConnectionString");
+        }
+        // private Database objDatabase = DatabaseFactory.CreateDatabase("ConnectionString");
+        //DatabaseProviderFactory factory = new DatabaseProviderFactory();
+        //Database objDatabase = factory.Create("ConnectionString");
        // private Database objDatabase = DatabaseFactory.CreateDatabase();
         public int InsertInvoiceHeader(int _InvoiceReference, string _InvoiceComments, DateTime _InvoiceDate, string _CustomerName, string _CustomerAddress)
         {
